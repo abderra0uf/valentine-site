@@ -1,0 +1,55 @@
+/* Typography */
+.serif { font-family: 'Cormorant Garamond', serif; }
+body { font-family: 'Montserrat', sans-serif; letter-spacing: 0.01em; }
+
+/* Puzzle Elements */
+.puzzle-tile {
+    transition: all 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.99);
+}
+
+.tile-hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+}
+
+/* Success Screen - Full Page Background */
+.final-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/background.gif'); 
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    animation: fadeIn 3s ease forwards;
+}
+
+.final-text {
+    font-size: 5rem;
+    color: #44403c;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    /* Lowering the text slightly */
+    margin-top: 10vh; 
+}
+
+@media (max-width: 768px) {
+    .final-text { font-size: 3rem; margin-top: 5vh; }
+}
+
+/* Animations */
+.fade-in { animation: fadeIn 2s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.shake { animation: shake 0.4s ease; border-bottom-color: #d6d3d1 !important; }
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}

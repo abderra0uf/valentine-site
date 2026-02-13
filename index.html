@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memory | Valentine's 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased overflow-hidden">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+        <header class="text-center mb-10 fade-in">
+            <h1 class="serif italic text-4xl md:text-5xl text-stone-700 font-light mb-4 tracking-tight">The Architecture of a Memory</h1>
+            <div class="h-px w-16 bg-stone-300 mx-auto"></div>
+        </header>
+
+        <main class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="relative mx-auto" id="photo-wrapper">
+                <div class="absolute -inset-4 border border-stone-200 pointer-events-none"></div>
+                <div class="relative bg-white p-3 shadow-sm inline-block" id="flower-container">
+                    <img src="images/us.jpg" alt="Memory" id="us-photo" class="max-w-full h-auto transition-all duration-[2000ms] ease-in-out" style="filter: grayscale(100%) blur(18px);">
+                    
+                    <div id="puzzle-grid" class="absolute inset-3 grid grid-cols-2 grid-rows-3 gap-0.5">
+                        <div class="puzzle-tile tile-style"></div>
+                        <div class="puzzle-tile tile-style"></div>
+                        <div class="puzzle-tile tile-style"></div>
+                        <div class="puzzle-tile tile-style"></div>
+                        <div class="puzzle-tile tile-style"></div>
+                        <div class="puzzle-tile tile-style"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="game-container" class="max-w-md mx-auto lg:mx-0 w-full">
+                <div id="question-box" class="fade-in">
+                    <p id="q-count" class="uppercase tracking-[0.2em] text-[10px] text-stone-400 mb-2 font-medium"></p>
+                    <h2 id="question-text" class="serif text-2xl md:text-3xl italic text-stone-600 leading-snug min-h-[90px]"></h2>
+                    
+                    <div class="mt-8 space-y-6">
+                        <input type="text" id="answer-input" autocomplete="off"
+                            class="w-full bg-transparent border-b border-stone-200 py-2 focus:border-stone-800 outline-none transition-all placeholder-stone-200 text-lg font-light italic"
+                            placeholder="Type the memory...">
+                        
+                        <div class="flex items-center justify-between">
+                            <button id="submit-btn" class="group flex items-center space-x-4 uppercase tracking-widest text-xs font-medium hover:text-stone-500 transition-colors">
+                                <span>Submit</span>
+                                <div class="h-px w-8 bg-stone-800 group-hover:w-12 transition-all"></div>
+                            </button>
+                            <p id="hint-toggle" class="text-[10px] uppercase tracking-widest text-stone-300 cursor-pointer hover:text-stone-500 transition-colors">Hint</p>
+                        </div>
+                        
+                        <p id="error-msg" class="text-stone-400 italic text-sm opacity-0 transition-opacity min-h-[24px]"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
